@@ -6,9 +6,9 @@ A demo for people aged from 15 to 30 seeking education advice.
 # technical stack
 front end: angular4  
    
-back end: node.js / spring boot / hapi  
+back end: node.js / hapi  
    
-database: mySQL, data  
+database: mongoDB, schema  
 
 CI/CD Jenkins
 
@@ -16,9 +16,17 @@ CI/CD Jenkins
 Colleague students(15-30)
 
 # time schedule
-Sprint1 - week1 
+Sprint1 - week1  
+status: finished, a simple demo
 
-Sprint2 - week2
+Sprint2 - week2  
+task:   
+1 improve the database schema  
+2 50 articles  
+3 rating system  
+4 search function  
+5 debug   
+
 
 Sprint3 - week3
 
