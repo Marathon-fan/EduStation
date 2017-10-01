@@ -22,10 +22,15 @@ status: finished, a simple demo
 Sprint2 - week2  
 task:   
 1 improve the database schema  
-2 50 articles  
-3 rating system  
-4 search function  
-5 debug   
+1) add rating  
+2) add category  
+
+2 more sample article  
+50 articles  
+
+3 search function  
+
+4 debug   
 
 
 Sprint3 - week3
