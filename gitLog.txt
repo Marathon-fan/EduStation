@@ -1,0 +1,17 @@
+summary:
+-sorting by length, ascending and descending orders are now working
+
+files changes:
+*mysortpipe.ts
+-edited the sort method to take order argument as well 
+-implemented the sorting by length feature
+
+*posts-lists.component.ts  
+-added variables for the sortorder
+-added function for changing the sorting order option
+
+*posts-lists.component.html
+-added the button for sorting order, now displays the sorting order by arrow
+
+*posts-lists.component.scss  
+-changed the css for displaying the arrows(copied from w3c)

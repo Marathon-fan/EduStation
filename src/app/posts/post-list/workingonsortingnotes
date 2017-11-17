@@ -1,0 +1,16 @@
+aim: implement dynamic sorting for the result of post queries
+
+obstacles:
+  since the original code for representing the posts is directly from the graphql query result,
+  it does not offer sorting functions.
+   the current result is stored as
+          public posts: ApolloQueryObservable<PostsInterface>;
+
+ ideas:
+  -watch a tutorial on graphql, find a way to change the result
+  -perhaps we will need to convert the query result to objects first then do a dynamic sort on that.
+  -initial sorting is needed too
+  -ofcuz we can sort somehow by providing variables in query but considering the case where the user just want to sort the current result instead of making a new search,\
+   dynamic sort makes more sense
+
+  -the auto search is very likely to be a innner search based on the current result, which has nothing to do with reordering the result.
