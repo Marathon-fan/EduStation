@@ -1,0 +1,49 @@
+<div class="posts">
+        <p>The post list is composed by the angular components querying the GraphQL and displaying the result</p>
+
+    <div aria-flowto="<left></left>">
+        <h2>Posts list</h2>
+        <button class="addBtn" md-fab [routerLink]="['/posts/new']"> <md-icon>add</md-icon></button>
+        <br>
+    </div>
+
+  <md-input-container>
+        <input mdInput type="search" [(ngModel)]='listPostFilter' [formControl]="postControl" placeholder="search...">
+  </md-input-container>
+
+  <br>
+  <br>
+  sort by:
+
+  <select #selectElem (change)="changeSortOption(selectElem.value)">
+    <option *ngFor="let x of postProperties">{{x}}</option>
+  </select>
+
+  <button (click)="changeSortOrder()"><i class={{sortOrder}}></i></button>
+
+
+
+  <br>
+  <br>
+
+
+
+  <md-card *ngFor="let post of posts | async | postsFilter:listPostFilter  | sort:sortOption:sortOrder">
+        <md-list>
+            <md-list-item>
+              <a md-line [routerLink]="['/posts/post-detail', post.id]"> {{post.title}} </a>
+              <p md-line>
+                <span>{{post.content}}</span>
+              </p>
+              <p md-line class= "trivial">
+                length: {{post.content.toString().length}}
+              </p>
+
+              <span><button md-button (click)='deletePost(post.id)'><md-icon>delete</md-icon></button></span>
+              <span><button md-button [routerLink]="['/posts/edit', post.id]"><md-icon>edit</md-icon></button></span>
+            </md-list-item>
+        </md-list>
+    </md-card>
+</div>
+
+

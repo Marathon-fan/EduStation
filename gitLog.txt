@@ -1,0 +1,28 @@
+summary:
+====log 1============Leon=
+-sorting by length, ascending and descending orders are now working
+
+file changes:
+*mysortpipe.ts
+-edited the sort method to take order argument(ascending/descending) as well
+-implemented the sorting by length feature
+
+*posts-lists.component.ts
+-added variables for the sortorder
+-added function for changing the sorting order option
+
+*posts-lists.component.html
+-added the button for sorting order, now displays the sorting order by arrow
+
+*posts-lists.component.scss
+-changed the css for displaying the arrows(copied from w3c)
+
+
+====log 2====Leon========================
+now show the length of content
+
+file changes:
+*posts-lists.component.html
+  added code to show length in the md-list in trivial css.
+*posts-lists.component.scss
+  added css for trivial infos(small and grey)
