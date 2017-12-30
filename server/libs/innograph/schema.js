@@ -2,8 +2,19 @@
 import { makeExecutableSchema } from 'graphql-tools';
 import bit from 'bit-js';
 
-const Profile = bit('profile/schema');
-const Resolver = bit('profile/resolver');
+const Profile = `
+type test {
+	id: String
+}
+`;
+
+//const Profile = bit('profile/schema');
+//const Resolver = bit('profile/resolver');
+
+const Resolver = {
+
+};
+
 
 
 // const Post = bit('post/schema'); -- modify the code
@@ -11,12 +22,12 @@ const Post = `
   type Post {
     title: String
     body: String
-    authorId: Number    
+    authorId: Int    
     picAddr: String
     category: String
-    rating: Number
+    rating: Int
     source: String
-    createdAt: Date    
+    createdAt: String    
   }
 `;
 

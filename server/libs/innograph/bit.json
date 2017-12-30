@@ -4,7 +4,10 @@
         "tester": "none"
     },
     "dependencies": {},
-    "structure": "components/{namespace}/{name}",
+    "structure": {
+        "components": "components/{namespace}/{name}",
+        "dependencies": "components/.dependencies"
+    },
     "dist": {
         "target": "dist"
     }

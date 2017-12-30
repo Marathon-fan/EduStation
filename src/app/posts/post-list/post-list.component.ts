@@ -25,14 +25,7 @@ export class PostListComponent implements OnInit {
   public listPostFilter: string;
   public postControl = new FormControl();
 
-
-  //todo:loaded this from ipost, search on 'length' is not working yet.
-  public postProperties = ['title','content','length'];
-  public sortOption = this.postProperties[0];
-  public sortOrder = 'arrow down';
-
   private nameFilter: Subject<string> = new Subject<string>();
-
 
   // Inject Angular2Apollo service
   constructor(private _postService: PostsService, public snackBar: MdSnackBar) {
@@ -40,6 +33,7 @@ export class PostListComponent implements OnInit {
 
   public ngOnInit() {
     this.posts = this._postService.get();
+    // console.log(this.posts);
     // Add debounce time to wait 300 ms for a new change instead of keep hitting the server
     this.postControl.valueChanges.debounceTime(300).subscribe(name => {
       this.nameFilter.next(name);
@@ -53,7 +47,6 @@ export class PostListComponent implements OnInit {
       })
       .catch((error) => {
         this.openSnackBar(error.message, 'Delete');
-
       })
   }
   public openSnackBar(message: string, action: string) {
@@ -66,6 +59,11 @@ export class PostListComponent implements OnInit {
     this.sortOption = option ;
   }
 
+
+  //todo:loaded this from ipost, search on 'length' is not working yet.
+  public postProperties = ['title','content','length'];
+  public sortOption = this.postProperties[0];
+  public sortOrder = 'arrow down';
   public changeSortOrder(){
     console.log('1');
     if (this.sortOrder === 'arrow down' ){
